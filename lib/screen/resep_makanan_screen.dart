@@ -4,7 +4,12 @@ import 'package:resep_masakan/cubit/resep_makanan_cubit.dart';
 import 'package:resep_masakan/screen/detail_resep_makanan_screen.dart';
 
 class ResepMakananScreen extends StatefulWidget {
-  const ResepMakananScreen({Key? key}) : super(key: key);
+  // const ResepMakananScreen({Key? key}) : super(key: key);
+  final String? gmbResepMakanan;
+  const ResepMakananScreen({
+    Key? key,
+    this.gmbResepMakanan,
+  }) : super(key: key);
 
   @override
   State<ResepMakananScreen> createState() => _ResepMakananScreenState();
@@ -61,12 +66,18 @@ class _ResepMakananScreenState extends State<ResepMakananScreen> {
                   },
                   contentPadding:
                       EdgeInsets.symmetric(vertical: 18, horizontal: 18),
-                  title: Text(
+                  title:
+                      // Row(
+                      // children: [
+                      // Image.network(widget.gmbResepMakanan!),
+                      Text(
                     resepMakananCubit.resepMakananModel.results![index].title!,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  // ],
+                  // ),
                   subtitle: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Row(
